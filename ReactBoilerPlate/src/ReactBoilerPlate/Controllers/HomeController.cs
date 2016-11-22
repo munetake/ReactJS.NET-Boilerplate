@@ -56,5 +56,15 @@ namespace ReactBoilerPlate.Controllers
         {
             return Json(_comments);
         }
+
+        [Route("comments/new")]
+        [HttpPost]
+        public IActionResult AddComment(CommentModel comment)
+        {
+            // Create a fake ID for this comment
+            comment.Id = _comments.Count + 1;
+            _comments.Add(comment);
+            return Content("Success :)");
+        }
     }
 }
