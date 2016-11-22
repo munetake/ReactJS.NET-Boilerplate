@@ -63,7 +63,9 @@ var CommentBox = React.createClass({
     }
 });
 
+// In a real app, the URL "/comments" should be generated server-side via a Url.Action call
+// Alternatively, RouteJS (http://dan.cx/projects/routejs) could be used.
 ReactDOM.render(
-    <CommentBox data={ data } />,
+    <CommentBox url="/comments" />,
     document.getElementById("content")
 );
